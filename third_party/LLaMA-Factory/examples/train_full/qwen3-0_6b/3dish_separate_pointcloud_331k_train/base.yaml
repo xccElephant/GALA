@@ -1,0 +1,68 @@
+### Stage 2: Task Finetuning
+# 从 Stage 1 对齐后的 checkpoint 继续训练
+# 解冻 LLM + projector，用正常的摆放任务数据 + text dropout
+
+### model — 从 Stage 1 的输出继续
+model_name_or_path: saves/train_full_sft/qwen3-0_6b/3dish_alignment_500k_train
+trust_remote_code: true
+low_cpu_mem_usage: false
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+freeze_vision_tower: true
+freeze_multi_modal_projector: false
+freeze_language_model: false
+projector_lr: 5e-4
+
+### dataset — 可选混入对齐数据防止 modality laziness
+# concat 后 shuffle, 对齐数据通过 dataset_info.json 中 num_samples 控制量
+# 这里不混入
+dataset: 3dish_separate_pointcloud_331k_train
+template: pointlm_qwen3
+cutoff_len: 16384
+overwrite_cache: true
+preprocessing_num_workers: 64
+dataloader_num_workers: 16
+
+text_dropout_prob: 0.0
+
+### output
+output_dir: saves/train_full_sft/qwen3-0_6b/3dish_separate_pointcloud_331k_train
+logging_steps: 10
+save_steps: 780
+save_total_limit: 20
+overwrite_output_dir: false
+save_only_model: false
+report_to: wandb
+run_name: qwen3-0_6b_3dish_separate_pointcloud_331k_train
+
+### train
+per_device_train_batch_size: 16
+gradient_accumulation_steps: 1
+disable_gradient_checkpointing: true
+ddp_find_unused_parameters: false
+learning_rate: 2.0e-5
+num_train_epochs: 4
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+flash_attn: fa2
+enable_liger_kernel: true
+
+### eval
+eval_dataset: 3dish_separate_pointcloud_331k_val
+# eval_on_each_dataset: true
+val_size: 0.0
+per_device_eval_batch_size: 8
+eval_strategy: steps
+eval_steps: 780
+do_eval: true
+
+# run
+# mkdir -p saves/train_full_sft/qwen3-0_6b/3dish_separate_pointcloud_331k_train
+
+# CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 llamafactory-cli train examples/train_full/qwen3-0_6b/3dish_separate_pointcloud_331k_train/base.yaml 2>&1 | tee saves/train_full_sft/qwen3-0_6b/3dish_separate_pointcloud_331k_train/train.log

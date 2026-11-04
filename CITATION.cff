@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+title: "GALA: Geometry-Aware Language Model for Controllable Object Arrangement"
+message: "If you use GALA or its dataset in your research, please cite our SIGGRAPH Asia 2026 paper."
+type: software
+url: "https://xccelephant.github.io/paper/gala/"
+repository-code: "https://github.com/xccElephant/GALA"
+license: Apache-2.0
+authors:
+  - family-names: Xiang
+    given-names: Chucheng
+    orcid: "https://orcid.org/0009-0000-3310-5528"
+  - family-names: Wang
+    given-names: Runze
+    orcid: "https://orcid.org/0009-0002-0507-8715"
+  - family-names: Deng
+    given-names: Zhi
+    orcid: "https://orcid.org/0000-0003-4582-4874"
+  - family-names: Bao
+    given-names: Ruchao
+    orcid: "https://orcid.org/0009-0002-4536-1953"
+  - family-names: Zhang
+    given-names: Yuanwei
+    orcid: "https://orcid.org/0009-0000-8388-5665"
+  - family-names: Xie
+    given-names: Yuxuan
+    orcid: "https://orcid.org/0000-0002-9877-4594"
+  - family-names: Wang
+    given-names: Hanliu
+    orcid: "https://orcid.org/0009-0001-4781-5077"
+  - family-names: Fei
+    given-names: Liangzhen
+    orcid: "https://orcid.org/0009-0006-0919-9273"
+  - family-names: Wu
+    given-names: Wenzheng
+    orcid: "https://orcid.org/0009-0005-4192-8176"
+  - family-names: Wan
+    given-names: Cheng
+    orcid: "https://orcid.org/0009-0000-6350-4925"
+  - family-names: Li
+    given-names: Peifeng
+    orcid: "https://orcid.org/0009-0002-9847-6017"
+  - family-names: Liu
+    given-names: Zhongyuan
+    orcid: "https://orcid.org/0000-0003-1601-0038"
+  - family-names: Liu
+    given-names: Ligang
+    orcid: "https://orcid.org/0000-0003-4352-1431"
+preferred-citation:
+  type: conference-paper
+  title: "GALA: Geometry-Aware Language Model for Controllable Object Arrangement"
+  authors:
+    - family-names: Xiang
+      given-names: Chucheng
+    - family-names: Wang
+      given-names: Runze
+    - family-names: Deng
+      given-names: Zhi
+    - family-names: Bao
+      given-names: Ruchao
+    - family-names: Zhang
+      given-names: Yuanwei
+    - family-names: Xie
+      given-names: Yuxuan
+    - family-names: Wang
+      given-names: Hanliu
+    - family-names: Fei
+      given-names: Liangzhen
+    - family-names: Wu
+      given-names: Wenzheng
+    - family-names: Wan
+      given-names: Cheng
+    - family-names: Li
+      given-names: Peifeng
+    - family-names: Liu
+      given-names: Zhongyuan
+    - family-names: Liu
+      given-names: Ligang
+  collection-title: "Proceedings of the SIGGRAPH Asia 2026 Conference Papers"
+  publisher:
+    name: "ACM"
+  year: 2026
+  doi: "10.1145/3829340.3842289"

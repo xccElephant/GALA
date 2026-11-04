@@ -1,0 +1,26 @@
+{
+    "providers": {
+        "genai_native": {
+            "api_key": "your-google-api-key",
+            "sdk": "google-genai"
+        },
+        "gemini": {
+            "api_key": "your-google-api-key",
+            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai"
+        },
+        "openai": {
+            "api_key": "your-openai-api-key",
+            "base_url": "https://api.openai.com/v1"
+        },
+        "anthropic": {
+            "api_key": "your-anthropic-api-key",
+            "base_url": "https://api.anthropic.com/v1"
+        }
+    },
+    "models": {
+        "scene_planner": "gemini/gemini-3-pro-preview",
+        "instruction_generator": "gemini/gemini-3-flash-preview",
+        "edit_parser": "gemini/gemini-3-flash-preview",
+        "default": "gemini/gemini-3-flash-preview"
+    }
+}

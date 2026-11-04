@@ -1,0 +1,10 @@
+.pytest_cache/
+__pycache__/
+.cursor/
+.vscode/
+.DS_Store
+input/
+output/
+/datasets
+config/llm_key.json
+test/
